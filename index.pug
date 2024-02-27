@@ -1,0 +1,11 @@
+html
+ head
+  title #{titolo}
+  link(rel='stylesheet', href='/css/style.css')
+ body
+  article.container
+   each p in persons
+    div.person
+     div.person-image(style=`background: url('../images/${p.image}') top center no-repeat; background-size: cover;`)
+     h2.person-name #{p.nome} (#{p.eta} anni)
+     a(href=`/profile?id=${p.id}`) Vedi profilo
